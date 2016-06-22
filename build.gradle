@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.3.3.RELEASE'
+        springBootVersion = '1.3.5.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -30,9 +30,7 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-security")
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("com.auth0:spring-security-auth0:0.3") {
-        exclude module: 'servlet-api'
-    }
+    compile 'com.auth0:auth0-spring-security-api:0.0.2'
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
@@ -45,5 +43,5 @@ eclipse {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.11'
+    gradleVersion = '2.14'
 }
